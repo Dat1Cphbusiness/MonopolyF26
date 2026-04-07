@@ -25,4 +25,3 @@ The project is used to demonstrate principles of object oriented programming (as
 * lesson 3: level 3, 2, 1
 * lesson 4: level 4, (3), 2, 1
 * lesson 5: level 5, 4, (3), 2, 1
-
