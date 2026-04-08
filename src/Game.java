@@ -17,6 +17,7 @@ public class Game {
     }
 
     public void startSession(){
+        ui.displayMsg("Welcome to Monopoly");
 
         ArrayList<String> data = FileIO.readData("data/playerData.csv");
 
