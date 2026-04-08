@@ -32,7 +32,7 @@ Game *-- "2" Dice
 Board *-- "40" Field : has-a
 
 Plot *-- Building: has-a
-Property *-- Deed
+Property "1" *-- "1" Deed : has-a
 Player *-- Deed
 Business <|-- ShippingLine
 Business <|-- Brewery : is - a
@@ -45,7 +45,7 @@ Field <|-- Tax
 Field <|-- Prison
 Field <|-- Visit
 
-Field -- Player
+
 CardDeck --* Chance
 Property <|-- Business
 Property <|-- Plot: is - a
