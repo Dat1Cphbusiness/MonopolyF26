@@ -18,9 +18,11 @@ public class Game {
 
     public void startSession(){
 
+        ui.promptText("Velkommen til Matador"); //Max
+
         ArrayList<String> data = FileIO.readData("data/playerData.csv");
 
-        if(!data.isEmpty()){
+        if(!data.isEmpty() && ui.promptBinary("Continue previously saved game? Y/N")){ // Louise
             for(String s : data){
                 String[] values =  s.split(",");//  String'en "tess, 0" bliver til arrayet ["tess", "0"]
                 int score = Integer.parseInt(values[1].trim());
