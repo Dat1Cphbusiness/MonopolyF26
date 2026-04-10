@@ -64,8 +64,15 @@ public class Game {
     }
 
     public void runGameLoop(){
-        currentPlayer = players.getFirst();
-        ui.displayMsg("Det er nu " + currentPlayer.getName() + "'s tur.");
+        int count = 0;
+        boolean continueGame = true;
+        while (continueGame){
+            currentPlayer = players.get(count % players.size());
+            count++;
+            ui.displayMsg("Det er nu " + currentPlayer.getName() + "'s tur.");
+            continueGame = ui.promptBinary("Fortsæt? Y/N");
+        }
+
 }
 
 
