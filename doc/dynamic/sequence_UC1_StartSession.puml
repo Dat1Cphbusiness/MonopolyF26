@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+Main -> Game: startSession()
+'indsæt kald til displayMessage i TextUI
+'indsæt kald til readPlayerData i FIleIO
+'indsæt betingelse (alt)
+'indsæt loop
+'indsæt kald til createPlayer
+'indsæt kald til registerPlayer
+'indsæt kald til displayPlayers
+
+
+@enduml
+
+
