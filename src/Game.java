@@ -12,6 +12,7 @@ public class Game {
     private List<Player> players;
     TextUI ui = new TextUI();
     private Player currentPlayer;
+    boolean continueGame = true;
 
     public Game(String name, int maxPlayers){
         this.name = name;
@@ -66,8 +67,31 @@ public class Game {
 
 
     public void runGameLoop(){
-        currentPlayer = players.getFirst();
-        ui.displayMsg("Det er " + currentPlayer.getName() + "'s tur");
+        int count = 0;
+        while(continueGame){
+            currentPlayer = players.get(count);
+            count++;
+            if(count == players.size()){
+                count = 0;
+            }
+            throwAndMove();
+        }
     }
 
+    public void throwAndMove(){
+        ui.displayMsg("Det er " + currentPlayer.getName() + "'s tur");
+        continueGame = ui.promptBinary("Fortsæt?Y/N");
+        if(!continueGame){
+            endGame();
+        }
+    }
+
+
+    public void landAndAct(){
+
+    }
+
+    public void endGame(){
+        ui.displayMsg("Game over");
+    }
 }
