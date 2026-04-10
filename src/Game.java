@@ -64,6 +64,7 @@ public class Game {
         }
     }
 
+
     public void runGameLoop(){
         currentPlayer = players.getFirst();
         ui.displayMsg("Det er " + currentPlayer.getName() + "'s tur");
