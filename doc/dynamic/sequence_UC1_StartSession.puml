@@ -1,22 +1,24 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-autonumber
+Game -> TextUI: displayMessage()
+Game -> FileIO: playerdata = readPlayerData("data.csv")
+return playerdata
+alt [d playerdata exists && continue saved game]
 
-Main -> Game: startSession()
+loop playerdata
+Game -> Game: createPlayer
+end
 
-Game -> TextUI: displayMessage("Velkommen til Matador")
-'indsæt kald til readPlayerData i FIleIO
-Game -> FileIO: data =readPlayerData()
-FileIO --> Game: data
-'indsæt betingelse (alt)
-  'indsæt loop
-'indsæt kald til createPlayer
-'indsæt kald til registerPlayer
-'indsæt kald til displayPlayers
+else
+Game -> Game: registerPlayers() [see UC2]
 
 
-@enduml
+
+end
+Game -> Game: displayPlayers
+
+[d playerdata exists && continue saved game]
 
 
 
@@ -52,16 +54,4 @@ end
 
 
 
-Game -> TextUI: displayMessage()
-Game -> FileIO: playerdata = readPlayerData()
-FileIO --> Game: playerdata
-alt [d playerdata exists && continue saved game]
-
-loop playerdata
-Game -> Game: createPlayer
-
-end
-else
-Game -> Game: registerPlayers()
-end
 
