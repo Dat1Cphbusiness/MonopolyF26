@@ -1,0 +1,13 @@
+
+@startuml
+Game -> TextUI: int totalPlayers = promptText("Hvor mange spillere deltager?")
+return 4
+loop player.size() < totalPlayers
+Game -> TextUI: name = promptText("what is the name?")
+return "Benny"
+
+Game -> Game: createPlayer(name,startAmount)
+Game -> Player:p = new(name, 0)
+Game -> ArrayList: add(p)
+end
+@enduml
