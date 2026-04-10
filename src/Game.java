@@ -10,12 +10,14 @@ public class Game {
     private int maxPlayers;
     private List<Player> players;
     TextUI ui = new TextUI();
+    private Player currentPlayer;
 
     public Game(String name, int maxPlayers){
         this.name = name;
         this.maxPlayers = maxPlayers;
         players = new ArrayList<>();
     }
+
 
     public void startSession(){
         ui.displayMsg("\uD83C\uDFA9 Welcome to "+this.name+" \uD83C\uDFA9");
@@ -60,5 +62,11 @@ public class Game {
             System.out.println(p);
         }
     }
+
+    public void runGameLoop(){
+        currentPlayer = players.getFirst();
+        ui.displayMsg("Det er nu " + currentPlayer.getName() + "'s tur.");
+}
+
 
 }

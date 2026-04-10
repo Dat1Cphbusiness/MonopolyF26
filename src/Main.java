@@ -16,8 +16,8 @@ public class Main {
     public static void main(String [] args) {
         Game g = new Game("Matador", 2);
         g.startSession();
+        g.runGameLoop();
 
     }
-
 
 }
