@@ -15,13 +15,14 @@ Game *-- FileIO
 class Game {
 - String name
 - int maxPlayers
-- List<Player>
+- List<Player> players
 - TextUI ui
-- FileIO io
+- Player currentPlayer
 + Game(String name, int maxPlayers)
-- void createPlayer(String name, int score)
-+ void registerPlayers()
 + void startSession()
++ void registerPlayers()
+- void createPlayer(String name, int score)
+- void runGameLoop()
 + void endSession()
 
 }
