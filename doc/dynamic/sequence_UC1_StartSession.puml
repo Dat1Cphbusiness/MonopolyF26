@@ -4,15 +4,23 @@
 autonumber
 
 Main -> Game: startSession()
-'indsæt kald til displayMessage i TextUI
-'indsæt kald til readPlayerData i FIleIO
-'indsæt betingelse (alt)
-'indsæt loop
-'indsæt kald til createPlayer
-'indsæt kald til registerPlayer
-'indsæt kald til displayPlayers
 
+Game -> TextUI: displayMsg("");
+
+Game -> FileIO: data = readData("filepath");
+
+alt Spiller vil fortsætte tidligere spil
+
+    loop igennem ArrayList data
+
+Game -> Game: createPlayer();
+    end
+
+else
+
+Game -> Game: registerPlayers();
+end
+
+Game -> Game: displayPlayers();
 
 @enduml
-
-
