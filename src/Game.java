@@ -9,6 +9,7 @@ public class Game {
     private int maxPlayers;
     private List<Player> players;
     TextUI ui = new TextUI();
+    private Player currentPlayer;
 
     public Game(String name, int maxPlayers){
         this.name = name;
@@ -37,7 +38,14 @@ public class Game {
     }
     public void registerPlayers(){
         //boolean
-        while(this.players.size() <= this.maxPlayers) {
+        int totalPlayers = ui.promptNumeric("Hvor mange skal være med");
+
+        while (totalPlayers < 2 || totalPlayers > 6) {
+            totalPlayers = ui.promptNumeric("skal være mellem 2 og 6");
+        }
+
+        while(this.players.size() < totalPlayers) {
+
             String playerName = ui.promptText("Tast spiller navn");
             this.createPlayer(playerName, 0);
         }
@@ -55,4 +63,8 @@ public class Game {
         }
     }
 
+    public void runGameLoop(){
+        currentPlayer = players.getFirst();
+        System.out.println(currentPlayer.getName() + "'s tur");
+    }
 }

@@ -7,9 +7,22 @@ Main -> Game: startSession()
 
 Game -> TextUI: displayMessage("Velkommen til Matador")
 'indsæt kald til readPlayerData i FIleIO
-Game -> FileIO: data =readPlayerData()
-FileIO --> Game: data
+Game -> TextUI: playerdata =readPlayerData()
+return playerdata
 'indsæt betingelse (alt)
+alt !data.isEmpty && ui.promptBinary
+    loop
+        Game -> TextUI : createPlayer
+    end
+else Game -> TextUI : registerPlayers
+     loop playerdata.size() < maxplayers
+         Game -> TextUI : ui.promptText("Tast spiller navn")
+         return "Benny"
+         Game -> TextUI : createPlayer(name,0)
+     end
+end
+Game -> TextUI : displayPlayers
+
   'indsæt loop
 'indsæt kald til createPlayer
 'indsæt kald til registerPlayer
