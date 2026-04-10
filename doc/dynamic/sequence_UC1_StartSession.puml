@@ -4,10 +4,13 @@
 autonumber
 
 Main -> Game: startSession()
-'indsæt kald til displayMessage i TextUI
+
+Game -> TextUI: displayMessage("Velkommen til Matador")
 'indsæt kald til readPlayerData i FIleIO
+Game -> FileIO: data =readPlayerData()
+FileIO --> Game: data
 'indsæt betingelse (alt)
-'indsæt loop
+  'indsæt loop
 'indsæt kald til createPlayer
 'indsæt kald til registerPlayer
 'indsæt kald til displayPlayers
@@ -15,4 +18,50 @@ Main -> Game: startSession()
 
 @enduml
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+alt
+
+loop
+end
+
+else
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+Game -> TextUI: displayMessage()
+Game -> FileIO: playerdata = readPlayerData()
+FileIO --> Game: playerdata
+alt [d playerdata exists && continue saved game]
+
+loop playerdata
+Game -> Game: createPlayer
+
+end
+else
+Game -> Game: registerPlayers()
+end
 
