@@ -68,12 +68,25 @@ public class Game {
         boolean continueGame = true;
         while (continueGame){
             currentPlayer = players.get(count % players.size());
+            throwAndMove();
             count++;
-            ui.displayMsg("Det er nu " + currentPlayer.getName() + "'s tur.");
             continueGame = ui.promptBinary("Fortsæt? Y/N");
         }
 
-}
+        //Skal nok kaldes via endSession(), men denne er ikke lavet endnu, og skal højest sandsynligvis også gemme data.
+        //Midlertidig direkte print til bruger for at vise spillet afsluttes.
+
+        ui.displayMsg("Tak for denne gang, spillet lukkes");
+
+    }
+
+    public void throwAndMove(){
+        ui.displayMsg("Det er nu " + currentPlayer.getName() + "'s tur.");
+    }
+
+    public void landAndAct(){
+
+    }
 
 
 }
