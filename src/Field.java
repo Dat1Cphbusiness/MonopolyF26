@@ -1,4 +1,4 @@
-public abstract class Field {
+public class Field {
 	private String label;
 	private int ID;
 	private int cost;
@@ -15,6 +15,7 @@ public abstract class Field {
 	}
 
 	public String onLand(Player p) {
+
 		return p + " er landet på felt " + this.ID + ", " + this.label;
 	}
 }

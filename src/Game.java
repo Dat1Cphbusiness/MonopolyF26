@@ -42,18 +42,18 @@ public class Game {
     }
 
     private void createGameAssets() {
-       String[] fielddata =  FileIO.readData("data/fielddata.csv", 40);
-       String[] carddata = FileIO.readData("data/carddata.csv", 54);
+       String[] fielddata =  FileIO.readData("data/fieldData.csv", 40);
+       String[] carddata = FileIO.readData("data/cardData.csv", 54);
         System.out.println(carddata[0]);
 
 
        Board board = new Board(fielddata,carddata);
 
        //TEST
-       Field f = board.getField(14);
+       Field f = board.getField(40);
        String message = f.onLand(currentPlayer);
 
-
+        System.out.println(message);
 
 
     }

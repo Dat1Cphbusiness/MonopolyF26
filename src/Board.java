@@ -1,10 +1,12 @@
 public class Board {
 
     private Field[] fields;
+    private CardDeck carddeck;
 
     public Board(String[] fielddata, String[] carddata){
         fields = new Field[fielddata.length];
         createFields(fielddata);
+        this.carddeck = new CardDeck(carddata);
     }
 
     private void createFields(String[] data){
@@ -19,7 +21,7 @@ public class Board {
            int income = Integer.parseInt(splitData[4].trim());
            int seriesID = Integer.parseInt(splitData[5].trim());
 
-           Field f = new Field(ID, fieldType, label, cost, income, seriesID);
+           Field f = new Field(ID, label, cost, income);
 
            fields[ID-1] = f;
 
