@@ -17,6 +17,5 @@ public class Player {
         return name + ", "+ score;
     }
 
-
 }
 
