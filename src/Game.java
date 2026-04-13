@@ -34,6 +34,7 @@ public class Game {
         }
         displayPlayers();
 
+        // klar til at bygge
 
 
     }
@@ -65,6 +66,7 @@ public class Game {
         }
     }
 
+
     public void runGameLoop(){
         int count = 0;
         boolean continueGame = true;
@@ -87,6 +89,21 @@ public class Game {
 
     public void endSession(){
         ui.displayMsg("Tak for denne gang, spillet lukkes");
+    }
+
+    private void createGameAssets() {
+        String[] fielddata = FileIO.readData("data/fieldData.csv", 40);
+        String[] carddata = FileIO.readData("data/cardData.csv", 54);
+        System.out.println(carddata[0]);
+
+        Board board = new Board(fielddata, carddata);
+
+        // TEST
+        Field f = board.getField(14);
+        String message = f.onLand(currentPlayer);
+
+
+
     }
 
 }
