@@ -39,11 +39,12 @@ public class Game {
     }
     public void registerPlayers(){
         //boolean
-        int totalPlayer = 1;
-        ui.displayMsg("Hvor mange skal være med?");
+        //Asking player first for amount of players.
+        int totalPlayer = ui.promptNumeric("Hvor mange spillere skal være med?");
 
-        while (totalPlayer < 2 || totalPlayer > 6){
-            totalPlayer = ui.promptNumeric("Tast et tal mellem 2 og 6");
+        //Changed max total players to reflect maxPlayers of the game itself
+        while (totalPlayer < 2 || totalPlayer > this.maxPlayers){
+            totalPlayer = ui.promptNumeric("Tast et tal mellem 2 og " + this.maxPlayers);
         }
 
         while(this.players.size() < totalPlayer) {
