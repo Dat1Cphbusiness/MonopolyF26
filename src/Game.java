@@ -48,7 +48,7 @@ public class Game {
 
         while(this.players.size() < totalPlayer) {
             String playerName = ui.promptText("Tast spiller navn");
-            this.createPlayer(playerName, 0);
+            this.createPlayer(playerName, 0); 
         }
 
         Collections.shuffle(players);
