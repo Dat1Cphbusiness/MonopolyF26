@@ -51,7 +51,6 @@ public class Game {
             this.createPlayer(playerName, 0);
         }
 
-
         Collections.shuffle(players);
     }
 
