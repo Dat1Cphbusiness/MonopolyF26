@@ -3,7 +3,6 @@ public class Board {
     private Field[] fields;
 
     public Board(String[] fielddata, String[] carddata){
-        //TODO - Hvad gøres med Carddata? Klassediagram oplyser at det bruges statisk, sekvensdiagram har Board der kalder new Carddeck
         fields = new Field[fielddata.length];
         createFields(fielddata);
     }
