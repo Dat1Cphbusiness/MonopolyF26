@@ -23,7 +23,8 @@ public abstract class Field {
 
 
     public String onLand(Player p) {
-        System.out.println(p.getName() +" er landet på " + this);
+
+       return p.getName() +" er landet på " + this;
 
 
 
