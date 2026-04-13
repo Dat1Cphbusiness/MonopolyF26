@@ -26,11 +26,11 @@ Id, FieldType, Label, Cost, Income, Series ID
 25, Plot, Grønningen, 4800, 400, 8
 26, Business, Scandlines, 4000, 500, 0
 27, plot, Bredgade, 5200, 450, 9
-28, plot Kgs.Nytov, 5200, 450, 9
+28, plot, Kgs.Nytov, 5200, 450, 9
 29, Brewery, CocaCola, 3000, 0, 0
 30, Plot, Østergade, 5600, 500, 9
-31, Prison, Fængsel, 0, 0
-32, Plot Amagertov, 6000, 550, 10
+31, Prison, Fængsel, 0, 0,0
+32, Plot, Amagertov, 6000, 550, 10
 33, Plot, Vimmelskaftet, 6000, 550, 4
 34, Chance, PrøvLykken, 0, 0, 0
 35, Plot, Nygade, 6400, 600, 4

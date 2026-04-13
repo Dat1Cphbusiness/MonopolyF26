@@ -15,7 +15,8 @@ public class Board {
         for(String s:data){
            String [] splitData = s.split(",");
            int ID = Integer.parseInt(splitData[0].trim());
-           String fieldType = splitData[1].trim().toLowerCase();
+            System.out.println(ID);
+            String fieldType = splitData[1].trim().toLowerCase();
            String label = splitData[2].trim();
            int cost = Integer.parseInt(splitData[3].trim());
            int income = Integer.parseInt(splitData[4].trim());
@@ -30,6 +31,7 @@ public class Board {
     }
 
     public Field getField(int id){
-        return fields[id];
+
+        return fields[id-1];
     }
 }

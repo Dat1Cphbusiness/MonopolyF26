@@ -11,6 +11,7 @@ public class Game {
     private List<Player> players;
     TextUI ui = new TextUI();
     private Player currentPlayer;
+    private Board board;
 
     public Game(String name, int maxPlayers){
         this.name = name;
@@ -49,12 +50,9 @@ public class Game {
 
 
        Board board = new Board(fielddata,carddata);
-
+       this.board = board;
        //TEST
-       Field f = board.getField(40);
-       String message = f.onLand(currentPlayer);
 
-        System.out.println(message);
 
 
     }
@@ -102,6 +100,14 @@ public class Game {
 
     public void throwAndMove(){
         ui.displayMsg("Det er nu " + currentPlayer.getName() + "'s tur.");
+        //kast terninger
+        //opdateren spillerens position
+        //find det felt han er landet på
+        Field f = board.getField(40);
+
+        String message = f.onLand(currentPlayer);
+
+        System.out.println(message);
     }
 
     public void landAndAct(){

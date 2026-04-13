@@ -6,7 +6,10 @@ public class Field {
 	private String option;
 
 	public Field(int ID, String label, int cost, int income) {
-
+              this.ID = ID;
+			  this.label = label;
+			  this.cost = cost;
+			  this.income = income;
 	}
 
 	@Override
@@ -16,6 +19,6 @@ public class Field {
 
 	public String onLand(Player p) {
 
-		return p + " er landet på felt " + this.ID + ", " + this.label;
+		return p.getName() + " er landet på felt " + this.ID + ", " + this.label;
 	}
 }
