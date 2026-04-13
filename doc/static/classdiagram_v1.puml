@@ -21,6 +21,7 @@ class Game{
  + Game(String name)
  'Methods
  - void startSession()
+ - void createGameAssets()
  - void createPlayer(String name, int balance)
  - void displayPlayers()
  - void registerPlayers()
@@ -68,8 +69,7 @@ class Field{
  + Field(int ID, String label, int cost, int income)
  + String toString()
  + String onLand(Player p)
- + String onAccept(Player p)
- + String onReject(Player p)
+
 }
 class Board{
  - Field[] fields
@@ -84,11 +84,12 @@ class Property{
  - int seriesID
  - boolean isMonopolized
  + Property(int ID, String label, int cost, int income, int seriesID)
+
 }
 
 class Chance{
  - {static} CardDeck cardDeck
- + Chance(int ID, String label)
+ + Chance(int ID, String label, CardDeck cardDeck)
 }
 class Tax{
  + Tax(int ID, String label, int cost)
@@ -136,6 +137,9 @@ class FileIO{
 }
 }
 Field <|-- Property: is-a
+Property <|-- Plot: is-a
+Property <|-- Brewery: is-a
+Property <|-- ShippingLine: is-a
 Field <|-- Chance: is-a
 Field <|-- Tax: is-a
 Game *-- TextUI

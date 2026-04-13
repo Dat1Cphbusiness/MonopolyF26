@@ -3,15 +3,24 @@
 
 
 
-Game -> Game: buildBoard()
-'indsæt kald til readBoardData i FIleIO
-'indsæt kald til konstruktoren i Board
-'indsæt kald til createFields
-'indsæt loop
-'indsæt kald til konstruktoren i Field
-'indsæt kald til readBoardData
+Game -> Game: createGameAssets()
+'indsæt kald til readData i FIleIO("fieldata.csv")
+'indsæt kald til til readData i FileIO("carddata.csv")
+
+
+
+'indsæt kald fra Game til konstruktoren i Board
+
 'indsæt kald til konstruktoren i CardDeck
 'indsæt kald til createCards
+'indsæt loop
 'indsæt kald til konstruktoren i Card
+
+'indsæt kald fra Board til createFields - også i Board
+'indsæt loop
+'indsæt kald til konstruktoren i Field
+
+
+
 @enduml
 
