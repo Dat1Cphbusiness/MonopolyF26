@@ -7,4 +7,18 @@ public abstract class Property extends Field{
 		super(ID, label, cost, income);
 		this.serieID = seriesID;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + ", " + serieID;
+	}
+
+	@Override
+	public String onLand(Player p) {
+		return super.onLand(p);
+		// If no one ownes the propety, player can buy
+		// else if owner is not currentplayer pay rent
+
+	}
+
 }

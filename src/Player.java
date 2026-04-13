@@ -17,6 +17,10 @@ public class Player {
         return name + ", "+ score;
     }
 
+    public int getScore(){
+        return score;
+    }
+
 
 }
 
