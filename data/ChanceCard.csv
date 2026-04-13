@@ -1,0 +1,55 @@
+Message,Income,Cost,Event,newPosition
+Betal Deres bilforsikring,0,1000,payment,0
+Ryk tre felter tilbage,0,0,moveSteps,-3
+Tag ind på Rådhuspladsen,0,0,moveToField,40
+Betal kr. 3000 for reparation af Deres vogn,0,3000,payment,0
+Ryk frem til "START",0,0,moveToField,1
+Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer "START" indkasserer De ikke kr. 4000,0,0,moveToField,11
+I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares indtil De får brug for det eller De kan sælge det,0,0,wildcard,0
+Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken,0,0,takeFerry,0
+De har været en tur i udlandet og haft for mange cigaretter med hjem. Betal told 200 kr.,0,200,payment,0
+Betal kr. 200 for levering af 2 kasser øl,0,200,payment,0
+Modtag udbytte af Deres aktier,1000,0,reward,0
+De modtager rente af Deres obligationer,1000,0,reward,0
+Kommunen har eftergivet en skattebøde,500,0,reward,0
+Modtag tantieme som følge af årets overskud,2000,0,reward,0
+Modtag kr. 1000 for gammelt sølvtøj,1000,0,reward,0
+Det er Deres fødselsdag. Modtag fra hver medspiller kr. 200,0,0,recieveFromPlayers,0
+De har lagt penge ud for hver medspiller. Modtag kr. 200 fra hver spiller,0,0,recieveFromPlayers,0
+Betal tandlægeregning,0,1000,payment,0
+Betal for vognvask og smøring,0,300,payment,0
+De har kørt uden lys. Betal bøde,0,500,payment,0
+Betal kontingent til grundejerforeningen,0,1000,payment,0
+Deres ejendomsskatter er forfaldne. Betal kr. 2000,0,2000,payment,0
+Betal skolepenge,0,1000,payment,0
+Betal hospitalsregning,0,1500,payment,0
+Betal kr. 500 pr. hus og kr. 2000 pr. hotel,0,0,paymentTimesProperties,0
+Betal for reparation af Deres ejendomme: kr. 800 pr. hus og kr. 2300 pr. hotel,0,0,paymentTimesProperties,0
+Ryk frem til det nærmeste rederi og betal dobbelt leje til ejeren,0,0,takeFerry,0
+Tag til næste rederi. Hvis ingen ejer rederiet kan De købe det af banken. Hvis det er ejet betaler De dobbelt leje,0,0,takeFerry,0
+Ryk frem to felter,0,0,moveSteps,2
+Ryk fem felter tilbage,0,0,moveSteps,-5
+Ryk et felt frem,0,0,moveSteps,1
+Ryk fire felter tilbage,0,0,moveSteps,-4
+Tag til Frederiksberg Allé,0,0,moveToField,12
+Tag til Østergade,0,0,moveToField,25
+Tag til Strandvejen,0,0,moveToField,10
+Tag ind på Hellerupvej,0,0,moveToField,22
+Tag til Mols-Linien,0,0,moveToField,33
+Ryk frem til Grønningen,0,0,moveToField,17
+Ryk frem til "START" og indkasser kr. 4000,4000,0,moveToField,1
+Tag til Rederiet på Øresund,0,0,moveToField,36
+Ryk direkte til fængslet,0,0,moveToField,11
+Ryk tilbage til "START",0,0,moveToField,1
+Modtag kr. 500 i udlodning fra banken,500,0,reward,0
+Modtag bonus for god aktiehandel,1500,0,reward,0
+Banken har begået en fejl i Deres favør. Modtag kr. 2000,2000,0,reward,0
+Modtag arv,3000,0,reward,0
+Modtag tilbagebetaling af for meget betalt skat,1000,0,reward,0
+Modtag forsikringssum for beskadiget bagage,1500,0,reward,0
+Betal parkeringsbøde,0,200,payment,0
+Betal for husreparationer efter stormskade,0,0,paymentTimesProperties,0
+De har vundet i lotteriet. Modtag kr. 5000,5000,0,reward,0
+Gå et skridt tilbage,0,0,moveSteps,-1
+Gratis udgang af fængsel. Gem kortet til senere brug,0,0,wildcard,0
+Modtag kr. 500 fra hver medspiller som bryllupsgave,0,0,recieveFromPlayers,0
