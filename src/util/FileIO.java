@@ -50,7 +50,7 @@ public class FileIO {
         return data;
     }
 
-    public String[] readData(String path, int length){
+    public static String[] readData(String path, int length){
         String[] data = new String [length];
         File file = new File(path);
 
