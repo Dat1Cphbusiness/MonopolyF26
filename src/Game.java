@@ -34,9 +34,30 @@ public class Game {
         }
         displayPlayers();
 
+        //klar til at bygge model af spillet
+        createGameAssets();
+
 
 
     }
+
+    private void createGameAssets() {
+       String[] fielddata =  FileIO.readData("data/fielddata.csv", 40);
+       String[] carddata = FileIO.readData("data/carddata.csv", 54);
+        System.out.println(carddata[0]);
+
+
+       Board board = new Board(fielddata,carddata);
+
+       //TEST
+       Field f = board.getField(14);
+       String message = f.onLand(currentPlayer);
+
+
+
+
+    }
+
     public void registerPlayers(){
         //boolean
         int totalPlayer = 1;
