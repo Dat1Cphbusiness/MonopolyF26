@@ -10,12 +10,14 @@ public class Card {
     private int income;
     private int cost;
     private String event;
+    private int newPosition;
 
-    public Card(String message, int income, int cost, String event) {
+    public Card(String message, int income, int cost, String event, int newPosition) {
         this.message = message;
         this.income = income;
         this.cost = cost;
         this.event = event;
+        this.newPosition = newPosition;
     }
 
     public String getMessage() {
@@ -56,6 +58,7 @@ public class Card {
                 String event = data[3];
                 int newPosition = Integer.parseInt(data[4]);
 
+                Card card = new Card(message, income, cost, event, newPosition);
             }
 
         } catch (FileNotFoundException e) {
