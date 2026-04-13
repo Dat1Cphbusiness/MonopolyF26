@@ -13,8 +13,8 @@ public class Card {
     private int newPosition;
 
     static String header;
-    File file = new File("data/ChanceCard.csv");
-    List<Card> cards = new ArrayList<>();
+    static File file = new File("data/ChanceCard.csv");
+    static List<Card> cards = new ArrayList<>();
 
     public Card(String message, int income, int cost, String event, int newPosition) {
         this.message = message;
@@ -27,6 +27,7 @@ public class Card {
     public String getMessage() {
         return message;
     }
+
     public int getIncome() {
         return income;
     }
@@ -36,14 +37,16 @@ public class Card {
     public String getEvent() {
         return event;
     }
+
     public int getNewPosition() {
         return newPosition;
     }
 
-    public void createCards() {
+
+    public static void createCards() {
         try {
             Scanner reader = new Scanner(file);
-            header = reader.nextLine(); // skipper header
+            header = reader.nextLine();
 
             List<String> lines = new ArrayList<>();
             while (reader.hasNextLine()) {
@@ -59,8 +62,7 @@ public class Card {
                 String event = data[3];
                 int newPosition = Integer.parseInt(data[4]);
 
-                Card card = new Card(message, income, cost, event, newPosition);
-                cards.add(card);
+                cards.add(new Card(message, income, cost, event, newPosition));
             }
 
         } catch (FileNotFoundException e) {
@@ -68,16 +70,16 @@ public class Card {
         }
     }
 
-    public void displayCards() {
+    public static void displayCards() {
         for (int i = 0; i < cards.size(); i++) {
             Card card = cards.get(i);
             System.out.println("Card " + (i + 1) + ":");
             System.out.println("  Message: " + card.getMessage());
-            System.out.println(card.getIncome());
+            System.out.println( card.getIncome());
             System.out.println( card.getCost());
             System.out.println( card.getEvent());
             System.out.println( card.getNewPosition());
-            System.out.println();
+
         }
     }
 }
