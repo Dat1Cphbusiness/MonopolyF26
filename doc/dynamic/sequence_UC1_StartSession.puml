@@ -1,57 +1,51 @@
 @startuml
 'https://plantuml.com/sequence-diagram
+'  public void startSession(){
+ '        ui.displayMsg("\uD83C\uDFA9 Welcome to "+this.name+" \uD83C\uDFA9");
+ '
+ '        ArrayList<String> data = FileIO.readData("data/playerData.csv");
+ '
+ '        if(!data.isEmpty() && ui.promptBinary("Continue previously saved game? Y/N")){
+ '            for(String s : data){
+ '                String[] values =  s.split(",");//  String'en "tess, 0" bliver til arrayet ["tess", "0"]
+ '                int score = Integer.parseInt(values[1].trim());
+ '                createPlayer(values[0],score);
+ '            }
+ '        }else{
+ '            registerPlayers();
+ '        }
+ '        displayPlayers();
+ '
+ '
+ '
+ '    }
+autonumber
 
-Game -> TextUI: displayMessage()
-Game -> FileIO: playerdata = readPlayerData("data.csv")
-return playerdata
-alt [d playerdata exists && continue saved game]
 
-loop playerdata
-Game -> Game: createPlayer
-end
+participant Main
+participant Game
 
+Main -> Game : startSession()
+Game -> TextUI: displayMsg("Welcome...")
+Game -> FileIO : readdata("playerData.csv")
+alt !data.isEmpty() && ui.promptBinary("Continue? Y/N")
+    loop for each String s i data
+        Game -> Player : createPlayer(name, score)
+    end
 else
-Game -> Game: registerPlayers() [see UC2]
-
-
-
+    Game -> TextUI : registerPlayers()
 end
-Game -> Game: displayPlayers
+Main <- Game : displayPlayers()
 
-[d playerdata exists && continue saved game]
-
-
-
-
-
-
-
-
+'indsæt kald til displayMessage i TextUI X
+'indsæt kald til readPlayerData i FIleIO X
+'indsæt betingelse (alt) X
+'indsæt loop X
+'indsæt kald til createPlayer X
+'indsæt kald til registerPlayer X
+'indsæt kald til displayPlayers X
 
 
-
-
-
-
-
-alt
-
-loop
-end
-
-else
-
-
-end
-
-
-
-
-
-
-
-
-
-
+@enduml
 
 
