@@ -40,6 +40,8 @@ public class Game {
     }
     public void registerPlayers(){
         int totalPlayers = ui.promptNumeric("Hvor mange skal være med?");
+        //totalPlayers > 6 should be dynamic, can use field maxPlayers instead.
+        //Fejlbesked skal også ændres så at der oplyses 2-(maxPlayers) i stedet.
         while (totalPlayers < 2 || totalPlayers > 6){
             totalPlayers = ui.promptNumeric("Ugyldigt antal, skal være mellem 2-6. Hvor mange skal være med?");
         }
@@ -72,12 +74,7 @@ public class Game {
             count++;
             continueGame = ui.promptBinary("Fortsæt? Y/N");
         }
-
-        //Skal nok kaldes via endSession(), men denne er ikke lavet endnu, og skal højest sandsynligvis også gemme data.
-        //Midlertidig direkte print til bruger for at vise spillet afsluttes.
-
-        ui.displayMsg("Tak for denne gang, spillet lukkes");
-
+        endSession();
     }
 
     public void throwAndMove(){
@@ -88,5 +85,8 @@ public class Game {
 
     }
 
+    public void endSession(){
+        ui.displayMsg("Tak for denne gang, spillet lukkes");
+    }
 
 }
