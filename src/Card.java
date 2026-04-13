@@ -50,7 +50,12 @@ public class Card {
 
             for (int i = 0; i < lines.size(); i++) {
                 String[] data = lines.get(i).split(",");
-                // brug data[0], data[1], osv.
+                String message = data[0];
+                int income = Integer.parseInt(data[1]);
+                int cost = Integer.parseInt(data[2]);
+                String event = data[3];
+                int newPosition = Integer.parseInt(data[4]);
+
             }
 
         } catch (FileNotFoundException e) {
