@@ -34,21 +34,43 @@ public class Game {
         }
         displayPlayers();
 
+        //klar til at bygge model af spillet
+        createGameAssets();
+
 
 
     }
+
+    private void createGameAssets() {
+       String[] fielddata =  FileIO.readData("data/fieldData.csv", 40);
+       String[] carddata = FileIO.readData("data/cardData.csv", 54);
+        System.out.println(carddata[0]);
+
+
+       Board board = new Board(fielddata,carddata);
+
+       //TEST
+       Field f = board.getField(40);
+       String message = f.onLand(currentPlayer);
+
+        System.out.println(message);
+
+
+    }
+
     public void registerPlayers(){
         //boolean
-        int totalPlayer = 1;
-        ui.displayMsg("Hvor mange skal være med?");
+        //Asking player first for amount of players.
+        int totalPlayer = ui.promptNumeric("Hvor mange spillere skal være med?");
 
-        while (totalPlayer < 2 || totalPlayer > 6){
-            totalPlayer = ui.promptNumeric("Tast et tal mellem 2 og 6");
+        //Changed max total players to reflect maxPlayers of the game itself
+        while (totalPlayer < 2 || totalPlayer > this.maxPlayers){
+            totalPlayer = ui.promptNumeric("Tast et tal mellem 2 og " + this.maxPlayers);
         }
 
         while(this.players.size() < totalPlayer) {
             String playerName = ui.promptText("Tast spiller navn");
-            this.createPlayer(playerName, 0);
+            this.createPlayer(playerName, 0); 
         }
 
         Collections.shuffle(players);

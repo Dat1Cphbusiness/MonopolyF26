@@ -1,6 +1,6 @@
 @startuml
 !pragma layout smetana
-
+!pragma layout smetana
   actor user as u
 
 

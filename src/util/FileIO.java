@@ -16,8 +16,6 @@ import java.util.Scanner;
 public class FileIO {
 
 
-
-
     public void saveData(ArrayList<String> list, String path, String header){
         try {
 
@@ -50,7 +48,7 @@ public class FileIO {
         return data;
     }
 
-    public String[] readData(String path, int length){
+    public static String[] readData(String path, int length){
         String[] data = new String [length];
         File file = new File(path);
 
