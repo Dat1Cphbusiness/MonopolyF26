@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import util.TextUI;
@@ -34,8 +33,10 @@ public class Game {
             registerPlayers();
         }
         displayPlayers();
-    }
 
+
+
+    }
     public void registerPlayers(){
         //boolean
         int totalPlayer = 1;
@@ -49,6 +50,7 @@ public class Game {
             String playerName = ui.promptText("Tast spiller navn");
             this.createPlayer(playerName, 0);
         }
+
 
         Collections.shuffle(players);
     }
@@ -64,10 +66,28 @@ public class Game {
         }
     }
 
-
     public void runGameLoop(){
-        currentPlayer = players.getFirst();
-        ui.displayMsg("Det er " + currentPlayer.getName() + "'s tur");
+        int count = 0;
+        boolean continueGame = true;
+        while (continueGame){
+            currentPlayer = players.get(count % players.size());
+            throwAndMove();
+            count++;
+            continueGame = ui.promptBinary("Fortsæt? Y/N");
+        }
+        endSession();
+    }
+
+    public void throwAndMove(){
+        ui.displayMsg("Det er nu " + currentPlayer.getName() + "'s tur.");
+    }
+
+    public void landAndAct(){
+
+    }
+
+    public void endSession(){
+        ui.displayMsg("Tak for denne gang, spillet lukkes");
     }
 
 }
