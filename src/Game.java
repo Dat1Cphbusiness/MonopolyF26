@@ -65,9 +65,34 @@ public class Game {
     }
 
 
-    public void runGameLoop(){
-        currentPlayer = players.getFirst();
-        ui.displayMsg("Det er " + currentPlayer.getName() + "'s tur");
+    public void runGameLoop() {
+        throwAndMove();
+
+
+    }
+
+    public void throwAndMove(){
+        int count = 0;
+        boolean continueGame = true;
+        while (continueGame) {
+            currentPlayer = players.get(count);
+            ui.displayMsg("Det er " + currentPlayer.getName() + "'s tur");
+            count++;
+            if(count>=players.size()){
+                count=0;
+            }
+            continueGame = ui.promptBinary("Fortsæt? Y/N");
+            endSession();
+        }
+    }
+
+    public void landAndAct(){
+
+    }
+
+
+    public void endSession(){
+        ui.displayMsg("Spillet er slut");
     }
 
 }

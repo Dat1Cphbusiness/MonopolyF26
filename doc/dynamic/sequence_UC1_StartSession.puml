@@ -1,6 +1,7 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
+
 Game -> TextUI: displayMessage()
 Game -> FileIO: playerdata = readPlayerData("data.csv")
 return playerdata
