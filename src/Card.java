@@ -12,6 +12,10 @@ public class Card {
     private String event;
     private int newPosition;
 
+    static String header;
+    File file = new File("data/ChanceCard.csv");
+    List<Card> cards = new ArrayList<>();
+
     public Card(String message, int income, int cost, String event, int newPosition) {
         this.message = message;
         this.income = income;
@@ -23,21 +27,18 @@ public class Card {
     public String getMessage() {
         return message;
     }
-
     public int getIncome() {
         return income;
     }
-
     public int getCost() {
         return cost;
     }
-
     public String getEvent() {
         return event;
     }
-
-    static String header;
-    File file = new File("data/ChanceCard.csv");
+    public int getNewPosition() {
+        return newPosition;
+    }
 
     public void createCards() {
         try {
@@ -59,10 +60,24 @@ public class Card {
                 int newPosition = Integer.parseInt(data[4]);
 
                 Card card = new Card(message, income, cost, event, newPosition);
+                cards.add(card);
             }
 
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
+        }
+    }
+
+    public void displayCards() {
+        for (int i = 0; i < cards.size(); i++) {
+            Card card = cards.get(i);
+            System.out.println("Card " + (i + 1) + ":");
+            System.out.println("  Message: " + card.getMessage());
+            System.out.println(card.getIncome());
+            System.out.println( card.getCost());
+            System.out.println( card.getEvent());
+            System.out.println( card.getNewPosition());
+            System.out.println();
         }
     }
 }
