@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+
 public class CardDeck {
     private Card[] cards;
     private int counter;
@@ -10,7 +14,8 @@ public class CardDeck {
     }
 
     public Card getNext(){
-        return cards[0];
+        return cards[counter++];
+
     }
 
     public void createCards(String[] data){
@@ -22,5 +27,7 @@ public class CardDeck {
             String event = values[3].trim();
             cards[i] = new Card(message, income, cost, event);
         }
+        Collections.shuffle(Arrays.asList(cards));
     }
+
 }
