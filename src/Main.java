@@ -17,7 +17,5 @@ Rainy day:
             Game g = new Game("Matador", 3);
             g.startSession();
             g.runGameLoop();
-
-
         }
     }

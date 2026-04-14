@@ -1,6 +1,7 @@
 public class Player {
     private String name;
     private int score;
+    private int position;
 
     public Player(String name, int score){
         this.name = name;
@@ -19,6 +20,10 @@ public class Player {
 
     public int getScore(){
         return score;
+    }
+
+    public int updatePosition(int value){
+        return position += value;
     }
 
 
