@@ -27,8 +27,8 @@ public class Player {
         return position;
 
     }
-    boolean startPassed(){
-
+    void startPassed(){
+        Bank.deposit(500, this.Player);
 
     }
 
