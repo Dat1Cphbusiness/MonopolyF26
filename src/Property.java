@@ -14,12 +14,14 @@ public abstract class Property extends Field implements IOption{
 
 	public boolean checkForMonopoly() {
 		//Mangler logik til at tjekke monopol.
-		/*
-		for each field
-			if this.serieID == serieID OG this.owner != owner
-				return false
-		return true
-		 */
+//
+//		for (Field field : board.getFields()) {
+//			if (this.serieID == field.serieID && this.owner != field.getOwner) {
+//				return false;
+//			}
+//		}
+//		return true;
+
 
 		isMonopolized = false;
 		return isMonopolized;
