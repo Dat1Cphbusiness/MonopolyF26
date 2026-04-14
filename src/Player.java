@@ -10,6 +10,7 @@ public class Player {
     public Player(String name, int balance){
         this.name = name;
         this.balance= balance;
+        deeds=new ArrayList<>();
     }
 
     public String getName(){
