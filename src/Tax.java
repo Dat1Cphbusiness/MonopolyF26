@@ -6,12 +6,16 @@ public class Tax extends Field implements IOption{
 
     @Override
     public String onReject(Player p) {
-        return "";
+        int amount = (p.getTotalWorth/10);
+        Bank.withdraw(amount, p);
+        return amount + " kr er blevet betalt til skat";
     }
 
     @Override
     public String onAccept(Player p) {
-        return "";
+        Bank.withdraw(this.cost, p);
+
+        return "4000 kr. er blevet betlat til skat";
     }
 
 
