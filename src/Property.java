@@ -1,4 +1,4 @@
-public abstract class Property extends Field{
+public abstract class Property extends Field implements IOption{
 	private Player owner;
 	private int serieID;
 	private boolean isMonopolized;
@@ -19,6 +19,15 @@ public abstract class Property extends Field{
 		// If no one ownes the propety, player can buy
 		// else if owner is not currentplayer pay rent
 
+	}
+
+	@Override
+	public String onAccept(Player p){
+		return "test";
+	}
+	@Override
+	public String onReject(Player p){
+		return "test";
 	}
 
 }
