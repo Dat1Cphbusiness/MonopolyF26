@@ -17,7 +17,7 @@ public class Board {
         for(String s:data){
            String [] splitData = s.split(",");
            int ID = Integer.parseInt(splitData[0].trim());
-           String fieldType = splitData[1].trim().toLowerCase();
+           String fieldType = splitData[1].trim();
            String label = splitData[2].trim();
            int cost = Integer.parseInt(splitData[3].trim());
            int income = Integer.parseInt(splitData[4].trim());
@@ -28,13 +28,14 @@ public class Board {
            switch(fieldType){
                case"StartField": f = new Start(ID, label, income);
                    break;
-               case"Plot": f = new Plot(ID, label, income, cost, seriesID);
+               case"Plot": f = new Plot(ID, label, cost, income, seriesID);
                    break;
                case"Chance": f = new Chance(ID, label);
                    break;
                case"Tax": f = new Tax(ID, label, cost);
                    break;
-               case"ShippingLine": f = new ShippingLine(ID, label, cost, income, seriesID);
+               case"ShippingLine":
+               case"Business": f = new ShippingLine(ID, label, cost, income, seriesID);
                    break;
                case"Visit": f = new Visit(ID, label);
                    break;

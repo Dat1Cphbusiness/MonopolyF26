@@ -18,4 +18,15 @@ public class Bank {
 		balance -= amount;
 		//OBS: Banken kan ikke løbe tør for penge
 	}
+
+	public static boolean transfer(int amount, Player giver, Player recipient) {
+		boolean canPayFullAmount = withdraw(amount, giver);
+		if (!canPayFullAmount) {
+			amount = giver.getBalance();
+			withdraw(amount, giver);
+		}
+		deposit(amount, recipient);
+		return canPayFullAmount;
+	}
+
 }
