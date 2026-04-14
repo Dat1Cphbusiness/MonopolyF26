@@ -3,7 +3,6 @@ import util.TextUI;
 public class Board {
 
     private Field[] fields;
-    private CardDeck carddeck;
     TextUI ui = new TextUI();
 
     public Board(String[] fielddata, String[] carddata){
