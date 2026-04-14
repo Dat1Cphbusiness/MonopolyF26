@@ -21,4 +21,14 @@ public class Field {
 
 		return p.getName() + " er landet på felt " + this.ID + ", " + this.label;
 	}
+
+	public String getLabel(){
+		return label;
+	}
+
+	public int getIncome(){
+		return income;
+	}
+
+
 }

@@ -36,6 +36,10 @@ public class Player {
         return position;
     }
 
+    public int getPosition(){
+        return position;
+    }
+
     private void startPassed() {
         //set hasPassed flag
         Bank.deposit(4000,this);

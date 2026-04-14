@@ -125,10 +125,6 @@ public class Game {
        String message = f.onLand(currentPlayer);
        ui.displayMsg(message);
 
-       
-
-
-
     }
 
     public void endSession(){
