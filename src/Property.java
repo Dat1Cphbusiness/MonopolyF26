@@ -1,4 +1,4 @@
-public abstract class Property extends Field{
+public abstract class Property extends Field implements IOption{
 	private Player owner;
 	private int serieID;
 	private boolean isMonopolized;
@@ -21,4 +21,13 @@ public abstract class Property extends Field{
 
 	}
 
+    @Override
+    public String onAccept(Player player) {
+        return "";
+    }
+
+    @Override
+    public String onReject(Player player) {
+        return "";
+    }
 }

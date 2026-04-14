@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 public class Board {
 
     private Field[] fields;
@@ -7,6 +9,8 @@ public class Board {
         fields = new Field[fielddata.length];
         createFields(fielddata);
         this.carddeck = new CardDeck(carddata);
+        //Chance.cardDeck = new CardDeck(carddata);
+
     }
 
     private void createFields(String[] data){
@@ -22,7 +26,43 @@ public class Board {
            int income = Integer.parseInt(splitData[4].trim());
            int seriesID = Integer.parseInt(splitData[5].trim());
 
-           Field f = new Field(ID, label, cost, income);
+
+           Field f = null;
+           switch (fieldType){
+               case "Start":
+                   f = new Start(ID,label,income,cost);
+                   break;
+               case "Chance":
+                   f = new Chance(ID,label,income,cost);
+                   break;
+               case "Plot":
+                   f = new Plot(ID,label,income,cost,seriesID);
+                   break;
+               case "Tax":
+                   f = new Tax(ID,label,income,cost);
+                   break;
+               case "ShippingLine":
+                   f = new ShippingLine(ID,label,income,cost,seriesID);
+                   break;
+               case "Visit":
+                   f = new Visit(ID,label,income,cost);
+                   break;
+               case "Brewery":
+                   f = new Brewery(ID,label,income,cost,seriesID);
+                   break;
+               case "Parking":
+                   f = new Parking(ID,label,income,cost);
+                   break;
+               case "Business":
+                   f = new Business(ID,label,income,cost);
+                   break;
+               case "Prison":
+                   f = new Prison(ID,label,income,cost);
+                   break;
+               default:
+                   f = new Field(ID,label,income,cost);
+                   System.out.println("No such type available");
+           }
 
            fields[ID-1] = f;
 
