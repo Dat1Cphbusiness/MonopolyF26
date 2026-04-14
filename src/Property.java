@@ -16,6 +16,12 @@ public abstract class Property extends Field implements IOption{
 	@Override
 	public String onLand(Player p) {
 		String msg = super.onLand(p);
+		if (owner == null) {
+			setOption("buy");
+			msg+= "\n Vil du købe? (Y/N):";
+		} else {
+
+		}
 		return msg;
 		// If no one ownes the propety, player can buy
 		// else if owner is not currentplayer pay rent

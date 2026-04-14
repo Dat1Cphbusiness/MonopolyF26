@@ -12,6 +12,14 @@ public class Field {
 			  this.income = income;
 	}
 
+	public String getOption() {
+		return option;
+	}
+
+	public void setOption(String option) {
+		this.option = option;
+	}
+
 	@Override
 	public String toString() {
 		return ID + ", " + label;
