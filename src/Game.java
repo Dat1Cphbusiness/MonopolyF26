@@ -104,17 +104,30 @@ public class Game {
     public void throwAndMove(){
         ui.displayMsg("Det er nu " + currentPlayer.getName() + "'s tur.");
         int result = dice.rollDiceSum();
+         ui.displayMsg(currentPlayer.getName()+" har slået "+result);
+
+         ui.displayMsg(dice.getDiceRoll()[0]+ " : "+dice.getDiceRoll()[1]);
+         //Tjek om det er tredje dobbelslag, sæt position til fænges hvis ja
+
 
         //opdateren spillerens position
         int newPosition = currentPlayer.updatePosition(result);
 
+        //
+
         //find det felt han er landet på
         Field f = board.getField(newPosition);
-
+        landAndAct(f);
 
     }
 
-    public void landAndAct(){
+    public void landAndAct(Field f){
+       String message = f.onLand(currentPlayer);
+       ui.displayMsg(message);
+
+       
+
+
 
     }
 

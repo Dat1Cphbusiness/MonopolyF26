@@ -30,4 +30,7 @@ public class Dice {
         doubleDiceCounter = 0;
     }
 
+    public int[] getDiceRoll() {
+        return diceRoll;
+    }
 }

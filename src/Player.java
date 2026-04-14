@@ -1,12 +1,12 @@
 public class Player {
     private String name;
-    private int score;
+
     private int position;
     private int balance;
 
-    public Player(String name, int score){
+    public Player(String name, int balance){
         this.name = name;
-        this.score = score;
+        this.balance= balance;
     }
 
     public String getName(){
@@ -15,12 +15,9 @@ public class Player {
 
     @Override
     public String toString(){
-        return name + ", "+ score;
+        return name + ", "+ balance;
     }
 
-    public int getScore(){
-        return score;
-    }
 
     public int getBalance() {
         return balance;
@@ -34,9 +31,14 @@ public class Player {
         position += value;
         if(position > 40){
             position -= 40;
-            Bank.deposit(4000,this);
+            startPassed();
         }
         return position;
+    }
+
+    private void startPassed() {
+        //set hasPassed flag
+        Bank.deposit(4000,this);
     }
 
 

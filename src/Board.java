@@ -17,8 +17,7 @@ public class Board {
         for(String s:data){
            String [] splitData = s.split(",");
            int ID = Integer.parseInt(splitData[0].trim());
-            System.out.println(ID);
-            String fieldType = splitData[1].trim().toLowerCase();
+           String fieldType = splitData[1].trim().toLowerCase();
            String label = splitData[2].trim();
            int cost = Integer.parseInt(splitData[3].trim());
            int income = Integer.parseInt(splitData[4].trim());
@@ -46,7 +45,7 @@ public class Board {
                case"Prison": f = new Prison(ID, label, cost);
                    break;
                default:
-                   System.out.println("No such type available");
+                   System.out.println(ID+" No such type available");
            }
 
            fields[ID-1] = f;
