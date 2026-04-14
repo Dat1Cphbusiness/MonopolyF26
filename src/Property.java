@@ -20,7 +20,10 @@ public abstract class Property extends Field implements IOption{
 			setOption("buy");
 			msg+= "\n Vil du købe? (Y/N):";
 		} else {
-
+			if (owner != p){
+				msg+= "\n Du skal betale " + getIncome() + " til " + owner.getName();
+				Bank.transfer(getIncome(), p, owner);
+			}
 		}
 		return msg;
 		// If no one ownes the propety, player can buy
