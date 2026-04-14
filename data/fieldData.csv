@@ -24,7 +24,7 @@ Id, FieldType, Label, Cost, Income, Series ID
 23, Chance, Prøv Lykken, 0, 0, 0
 24, Plot, Østerbrogade, 4400, 350, 8
 25, Plot, Grønningen, 4800, 400, 8
-26, Business, Scandlines, 4000, 500, 0
+26, ShippingLine, Scandlines, 4000, 500, 0
 27, Plot, Bredgade, 5200, 450, 9
 28, Plot, Kgs.Nytov, 5200, 450, 9
 29, Brewery, CocaCola, 3000, 0, 0
