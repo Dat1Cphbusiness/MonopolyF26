@@ -1,19 +1,19 @@
 public class Bank {
-	private int balance = 1000000;
+	private static int balance = 1000000;
 
-	public boolean withdraw(int amount, Player p) {
+	public static boolean withdraw(int amount, Player p) {
 		if (amount > p.getBalance()) {
 			return false;
 		} else {
 			p.setBalance(p.getBalance() - amount);
-			this.balance += amount;
+			balance += amount;
 			return true;
 		}
 	}
 
-	public void deposit(int amount, Player p) {
+	public static void deposit(int amount, Player p) {
 		p.setBalance(p.getBalance() + amount);
-		this.balance -= amount;
+		balance -= amount;
+		//OBS: Banken kan ikke løbe tør for penge
 	}
-
 }

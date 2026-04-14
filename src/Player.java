@@ -32,7 +32,12 @@ public class Player {
     }
 
     public int updatePosition(int value){
-        return position += value;
+        position += value;
+        if(position > 40){
+            position -= 40;
+            Bank.deposit(4000,this);
+        }
+        return position;
     }
 
 
