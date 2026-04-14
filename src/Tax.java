@@ -15,7 +15,7 @@ public class Tax extends Field implements IOption{
     public String onAccept(Player p) {
         Bank.withdraw(this.cost, p);
 
-        return "4000 kr. er blevet betlat til skat";
+        return "4000 kr. er blevet betalt til skat";
     }
 
 
