@@ -21,14 +21,14 @@ public class Game {
     public void startSession(){
         ui.displayMsg("\uD83C\uDFA9 Welcome to "+this.name+" \uD83C\uDFA9");
         ui.displayMsg("Hvor mange skal være med?");
-        ArrayList<String> data = FileIO.readData("data/playerData.csv");
+        ArrayList<String> data = FileIO.readData("data/playerdata.csv");
 
 
         if(!data.isEmpty() && ui.promptBinary("Continue previously saved game? Y/N")){
             for(String s : data){
                 String[] values =  s.split(",");//  String'en "tess, 0" bliver til arrayet ["tess", "0"]
-                int score = Integer.parseInt(values[1].trim());
-                createPlayer(values[0],score);
+                int balance = Integer.parseInt(values[1].trim());
+                createPlayer(values[0],balance);
             }
         }else{
             registerPlayers();
@@ -43,7 +43,7 @@ public class Game {
     }
 
     private void createGameAssets() {
-       String[] fielddata =  FileIO.readData("data/fieldData.csv", 40);
+       String[] fielddata =  FileIO. readData("data/fieldData.csv", 40);
        String[] carddata = FileIO.readData("data/cardData.csv", 54);
         System.out.println(carddata[0]);
 
@@ -77,8 +77,8 @@ public class Game {
         Collections.shuffle(players);
     }
 
-    private void createPlayer(String name, int score){
-        Player p = new Player(name, score);
+    private void createPlayer(String name, int balance){
+        Player p = new Player(name, balance);
         players.add(p);
     }
 

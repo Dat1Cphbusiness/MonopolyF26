@@ -9,7 +9,6 @@ Id, FieldType, Label, Cost, Income, Series ID
 8, Chance, Prøv lykken, 0, 0, 0
 9, Plot, Valby Langgade, 2000, 100, 3
 10, Plot, Allégade, 2400, 150, 3
-11, Visit, På besøg, 1000, 0, 0
 12, Plot, Frederiksberg Allé, 2800, 200, 4
 13, Brewery, Tuborg Squash, 3000, 0, 5
 14, Plot, Bulowsvej, 2800, 200, 4
@@ -29,8 +28,8 @@ Id, FieldType, Label, Cost, Income, Series ID
 28, plot Kgs.Nytov, 5200, 450, 9
 29, Brewery, CocaCola, 3000, 0, 0
 30, Plot, Østergade, 5600, 500, 9
-31, Prison, Fængsel, 0, 0
-32, Plot Amagertov, 6000, 550, 10
+31, sentToPrison, Fængsels, 0, 0
+31, Plot Amagertov, 6000, 550, 10
 33, Plot, Vimmelskaftet, 6000, 550, 4
 34, Chance, PrøvLykken, 0, 0, 0
 35, Plot, Nygade, 6400, 600, 4
