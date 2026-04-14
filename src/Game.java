@@ -21,7 +21,6 @@ public class Game {
 
     public void startSession(){
         ui.displayMsg("\uD83C\uDFA9 Welcome to "+this.name+" \uD83C\uDFA9");
-        ui.displayMsg("Hvor mange skal være med?");
         ArrayList<String> data = FileIO.readData("data/playerData.csv");
 
 
