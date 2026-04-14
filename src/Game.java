@@ -45,7 +45,7 @@ public class Game {
 
     }
 
-    private void createGameAssets() {
+    public void createGameAssets() {
        String[] fielddata =  FileIO.readData("data/fieldData.csv", 40);
        String[] carddata = FileIO.readData("data/cardData.csv", 54);
         System.out.println(carddata[0]);
