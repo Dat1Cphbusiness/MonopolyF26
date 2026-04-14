@@ -4,6 +4,7 @@ public class Board {
 
     private Field[] fields;
     private CardDeck carddeck;
+    TextUI ui = new TextUI();
 
     public Board(String[] fielddata, String[] carddata){
         fields = new Field[fielddata.length];
