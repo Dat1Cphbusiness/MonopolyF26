@@ -8,7 +8,7 @@ public class Board {
         fields = new Field[fielddata.length];
         createFields(fielddata);
         this.carddeck = new CardDeck(carddata);
-        // Chance.cardDeck = new CardDeck(carddata);
+        Chance.cardDeck = new CardDeck(carddata);
     }
 
     private void createFields(String[] data){
