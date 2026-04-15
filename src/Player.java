@@ -7,6 +7,13 @@ public class Player {
     private ArrayList<Property> deeds;
     private ArrayList<Card> chanceCard;
     private boolean hasWildcard = false;
+    private boolean inPrison;
+
+    public int getDiceRoll() {
+        return diceRoll;
+    }
+
+    private int diceRoll;
 
 
     public Player(String name, int balance){
@@ -22,6 +29,16 @@ public class Player {
     public void setHasWildcard(boolean value) {
         this.hasWildcard = value;
     }
+
+    public void imprison(){
+        inPrison = true;
+        moveToPosition(31);
+    }
+
+    public void freeFromPrison(){
+        inPrison = false;
+    }
+
 
     public String getName(){
         return name;
