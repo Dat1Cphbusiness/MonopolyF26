@@ -18,4 +18,19 @@ public class Bank {
 		balance -= amount;
 		//OBS: Banken kan ikke løbe tør for penge
 	}
+
+	static boolean transfer(int amount, Player giver, Player recipient) {
+		if (withdraw(amount,giver)) {
+			deposit(amount,recipient);
+
+			System.out.println("Transfer success");
+			return true;
+		} else {
+			System.out.println("Transfer failed");
+			return false;
+		}
+	}
+
+
+
 }

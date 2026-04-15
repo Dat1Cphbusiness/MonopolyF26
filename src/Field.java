@@ -21,4 +21,7 @@ public class Field {
 
 		return p.getName() + " er landet på felt " + this.ID + ", " + this.label;
 	}
+	public int getCost(){
+		return cost;
+	}
 }

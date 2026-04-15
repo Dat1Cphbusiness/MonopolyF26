@@ -46,6 +46,7 @@ public class Board {
                case"Prison": f = new Prison(ID, label, cost);
                    break;
                default:
+                   f = new Field(0, "", 0, 0);
                    System.out.println(ID+" No such type available");
            }
 
