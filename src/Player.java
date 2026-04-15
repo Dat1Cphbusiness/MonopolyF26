@@ -10,7 +10,6 @@ public class Player {
     private boolean inPrison;
     private int diceRoll;
 
-
     public Player(String name, int balance){
         this.name = name;
         this.balance= balance;
