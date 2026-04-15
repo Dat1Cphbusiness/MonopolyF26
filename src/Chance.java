@@ -20,7 +20,7 @@ public class Chance extends Field{
             case "prison": p.updatePosition(11);
                 break;
             case "wildcard":
-                p.setHasWildcard(true);
+                p.setWildcard(true);
                 break;
             default:
                 break;

@@ -20,11 +20,11 @@ public class Player {
         return diceRoll;
     }
 
-    public boolean getHasWildcard() {
+    public boolean getWildcard() {
         return hasWildcard;
     }
 
-    public void setHasWildcard(boolean value) {
+    public void setWildcard(boolean value) {
         this.hasWildcard = value;
     }
 
