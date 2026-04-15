@@ -26,22 +26,20 @@ public class Prison extends Field implements IOption {
 
     String msg;
 
-if(wildCard)
-
-    {
+if(p.wildCard()){
         msg = "\n Vil du bruge dit wildcard? (Y/N)";
-    } else
 
-    {
+    } else {
         p.imprison();
         msg = "\n Næste gang det bliver din tur, kan duu vælge om du vil betale dig ud eller prøve at slå et dobbeltslag. Når du har siddet over i tre omgange er du løsladt.";
 
     }
 
-      return msg;
-
-}
 
 
 
 }
+
+
+
+
