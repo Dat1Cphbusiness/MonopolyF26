@@ -17,13 +17,14 @@ public class Board {
         for(String s:data){
            String [] splitData = s.split(",");
            int ID = Integer.parseInt(splitData[0].trim());
-           String fieldType = splitData[1].trim().toLowerCase();
+           String fieldType = splitData[1].trim();
+
            String label = splitData[2].trim();
            int cost = Integer.parseInt(splitData[3].trim());
            int income = Integer.parseInt(splitData[4].trim());
            int seriesID = Integer.parseInt(splitData[5].trim());
-
-           Field f = null;
+            System.out.println(fieldType);
+            Field f = null;
 
            switch(fieldType){
                case"StartField": f = new Start(ID, label, income);
