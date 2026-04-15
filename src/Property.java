@@ -53,8 +53,6 @@ public abstract class Property extends Field implements IOption{
 	@Override
 	public String onAccept(Player p) {
 
-
-
 		return p+" har nu købt "+this;
 	}
 
