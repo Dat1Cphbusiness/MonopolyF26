@@ -2,15 +2,25 @@ import java.util.ArrayList;
 
 public class Player {
     private String name;
-
     private int position;
     private int balance;
-    ArrayList<Property> deeds;
+    private ArrayList<Property> deeds;
+    private ArrayList<Card> chanceCard;
+    private boolean hasWildcard = false;
+
 
     public Player(String name, int balance){
         this.name = name;
         this.balance= balance;
         deeds=new ArrayList<>();
+    }
+
+    public boolean getHasWildcard() {
+        return hasWildcard;
+    }
+
+    public void setHasWildcard(boolean value) {
+        this.hasWildcard = value;
     }
 
     public String getName(){
@@ -57,6 +67,11 @@ public class Player {
         }
         return result;
     }
+
+    public void moveToPosition(int value){
+        position = value;
+    }
+
 
 
 
