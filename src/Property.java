@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class Property extends Field implements IOption{
 	private Player owner;
 	private int serieID;
@@ -13,18 +15,19 @@ public abstract class Property extends Field implements IOption{
 	}
 
 	public boolean checkForMonopoly() {
-		//Mangler logik til at tjekke monopol.
-//
-//		for (Field field : board.getFields()) {
-//			if (this.serieID == field.serieID && this.owner != field.getOwner) {
-//				return false;
-//			}
-//		}
-//		return true;
+		int seriesSize = 3;
+		if (serieID == 0 || serieID == 1 || serieID == 9) seriesSize = 2;
+		if (serieID == 3) seriesSize = 4;
 
-
-		isMonopolized = false;
-		return isMonopolized;
+		ArrayList<Property> deedsInSeries = new ArrayList<>();
+		for (Property deed : owner.deeds) {
+			if (deed.serieID == this.serieID) deedsInSeries.add(deed);
+		}
+		if (deedsInSeries.size() == seriesSize) {
+			for (Property deed : deedsInSeries) deed.isMonopolized = true;
+			return true;
+		}
+		return false;
 	}
 
 	@Override
