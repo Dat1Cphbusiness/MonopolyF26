@@ -52,12 +52,17 @@ public abstract class Property extends Field implements IOption{
 
 	@Override
 	public String onAccept(Player p) {
-
-		return p+" har nu købt "+this;
+		if (getOption().equals("buy")) {
+			p.buyProperty(this);
+			owner = p;
+			checkForMonopoly();
+			return p + " har nu købt " + this;
+		}
+		return p + " havde ikke råd til at købe " + this;
 	}
 
 	@Override
 	public String onReject(Player p) {
-		return "";
+		return p.getName() + " afviste at købe " + this;
 	}
 }
