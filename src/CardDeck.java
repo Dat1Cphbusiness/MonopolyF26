@@ -26,10 +26,11 @@ public class CardDeck {
 
     }
 
-    public Card getNext(int counter) {
+    public Card getNext() {
         counter++;
         if (counter == cards.length){
             counter = 0;
+
         }
         return cards[counter];
     }

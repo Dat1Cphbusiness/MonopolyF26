@@ -1,14 +1,14 @@
 public class Board {
 
     private Field[] fields;
-    private CardDeck carddeck;
+   // private CardDeck carddeck;
 
 
     public Board(String[] fielddata, String[] carddata){
         fields = new Field[fielddata.length];
         createFields(fielddata);
-        this.carddeck = new CardDeck(carddata);
-        // Chance.cardDeck = new CardDeck(carddata);
+       // this.carddeck = new CardDeck(carddata);
+        Chance.carddeck = new CardDeck(carddata);
     }
 
     private void createFields(String[] data){
