@@ -140,17 +140,10 @@ public class Game {
         }
 
 
-
-
-
-       
-
-
-
     }
 
     public void endSession(){
         ui.displayMsg("Tak for denne gang, spillet lukkes");
-    }
+   }
 
 }
