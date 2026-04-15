@@ -42,4 +42,20 @@ public class Field {
 	public String onReject(Player p){
 		return "";
 	}
+
+	/*
+	public void onReject(Player currentPlayer){
+		System.out.println(currentPlayer.getName() + " ønsker ikke at købe " + this.label);
+	}
+
+	public String onAccept(Player currentPlayer){
+		Property prop = (Property) this; //
+		if(currentPlayer.buyProperty(prop)){
+			return currentPlayer.getName() + " har nu købt " + this.label + " for " + this.cost;
+		} else {
+			return currentPlayer.getName() + " har ikke råd til " + this.label;
+		}
+	}
+	 */
+
 }
