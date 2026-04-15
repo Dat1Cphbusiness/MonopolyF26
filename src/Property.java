@@ -12,18 +12,18 @@ public abstract class Property extends Field implements IOption{
 		return owner;
 	}
 
+	public int getSerieID() {
+		return serieID;
+	}
+
 	public boolean checkForMonopoly() {
-		//Mangler logik til at tjekke monopol.
-//
-//		for (Field field : board.getFields()) {
-//			if (this.serieID == field.serieID && this.owner != field.getOwner) {
-//				return false;
-//			}
-//		}
-//		return true;
-
-
-		isMonopolized = false;
+		for (Property p : (Property[]) Game.board.getFields()) {
+			if (this.serieID == p.getSerieID() && this.owner != p.getOwner()) {
+				isMonopolized = false;
+				return isMonopolized;
+			}
+		}
+		isMonopolized = true;
 		return isMonopolized;
 	}
 

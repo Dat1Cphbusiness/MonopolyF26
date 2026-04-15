@@ -11,7 +11,7 @@ public class Game {
     private List<Player> players;
     TextUI ui = new TextUI();
     private Player currentPlayer;
-    private Board board;
+    public static Board board;
     private Dice dice = new Dice();
 
 

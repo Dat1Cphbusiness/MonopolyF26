@@ -11,6 +11,10 @@ public class Board {
         // Chance.cardDeck = new CardDeck(carddata);
     }
 
+    public Field[] getFields() {
+        return fields;
+    }
+
     private void createFields(String[] data){
         //Header - Id, FieldType, Label, Cost, Income, Series ID
 
