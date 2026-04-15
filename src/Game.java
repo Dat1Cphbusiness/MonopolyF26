@@ -132,18 +132,11 @@ public class Game {
                ui.displayMsg(acceptanceMessage);
 
             }else{
-
                 f.onReject(currentPlayer);
             }
         }else{
             ui.displayMsg(message);
         }
-
-
-
-
-
-       
 
 
 
@@ -153,4 +146,7 @@ public class Game {
         ui.displayMsg("Tak for denne gang, spillet lukkes");
     }
 
+    public Board getBoard() {
+        return board;
+    }
 }
