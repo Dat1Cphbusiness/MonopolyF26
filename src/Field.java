@@ -1,8 +1,8 @@
 public class Field {
 	private String label;
 	private int ID;
-	private int cost;
-	private int income;
+	protected int cost;
+	protected int income;
 	private String option;
 
 	public Field(int ID, String label, int cost, int income) {
@@ -35,5 +35,11 @@ public class Field {
 
 	public int getIncome(){
 		return income;
+	}
+	public String onAccept(Player p){
+		return "";
+	}
+	public String onReject(Player p){
+		return "";
 	}
 }

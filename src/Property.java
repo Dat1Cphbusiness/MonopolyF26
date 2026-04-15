@@ -34,7 +34,7 @@ public abstract class Property extends Field implements IOption{
 
 	@Override
 	public String onLand(Player p) {
-		String msg = super.onLand(p);
+		String msg = super.onLand(p); //"Du er landet på Valbylanggade"
 		if (owner == null) {
 			setOption("buy");
 			msg+= "\n Vil du købe? (Y/N):";
@@ -52,7 +52,10 @@ public abstract class Property extends Field implements IOption{
 
 	@Override
 	public String onAccept(Player p) {
-		return "";
+
+
+
+		return p+" har nu købt "+this;
 	}
 
 	@Override
