@@ -6,11 +6,16 @@ public class Player {
     private int position;
     private int balance;
     ArrayList<Property> deeds;
+    private boolean inPrison;
+    private boolean hasWildCard;
+    private int diceRoll;
 
     public Player(String name, int balance){
         this.name = name;
         this.balance= balance;
         deeds=new ArrayList<>();
+        inPrison=false;
+        hasWildCard=false;
     }
 
     public String getName(){
@@ -37,7 +42,22 @@ public class Player {
             position -= 40;
             startPassed();
         }
+        diceRoll = value;
         return position;
+    }
+
+    public int moveToPosition(int value){
+      position = value;
+      return position;
+    }
+
+    public void imprison(){
+        inPrison = true;
+        moveToPosition(31);
+    }
+
+    public void freeFromPrison(){
+        inPrison = false;
     }
 
     private void startPassed() {
@@ -58,7 +78,16 @@ public class Player {
         return result;
     }
 
+    public boolean isHasWildCard() {
+        return hasWildCard;
+    }
 
+    public void setHasWildCard(boolean hasWildCard) {
+        this.hasWildCard = hasWildCard;
+    }
 
+    public int getDiceRoll(){
+        return diceRoll;
+    }
 }
 
