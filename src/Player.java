@@ -69,11 +69,13 @@ public class Player {
         //set hasPassed flag
         Bank.deposit(4000,this);
     }
+
     public boolean buyProperty(Property pf){
         boolean f = Bank.withdraw(pf.getCost(),this);
             deeds.add(pf);
             return f;
     }
+
     public int getTotalWorth(){
         int result=getBalance();
         for(int i =0;i< deeds.size();i++ ){
