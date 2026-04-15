@@ -1,7 +1,7 @@
 public class Field {
 	private String label;
 	private int ID;
-	protected int cost;
+	private int cost;
 	private int income;
 	private String option;
 
@@ -10,6 +10,14 @@ public class Field {
 			  this.label = label;
 			  this.cost = cost;
 			  this.income = income;
+	}
+
+	public String getOption() {
+		return option;
+	}
+
+	public void setOption(String option) {
+		this.option = option;
 	}
 
 	@Override
@@ -23,5 +31,9 @@ public class Field {
 	}
 	public int getCost(){
 		return cost;
+	}
+
+	public int getIncome(){
+		return income;
 	}
 }

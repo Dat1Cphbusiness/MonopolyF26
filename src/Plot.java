@@ -14,6 +14,11 @@ public class Plot extends Property {
 		if owner == current player and isMonopolized
 		then give option to build
 		 */
-		return super.onLand(p);
+		String msg = super.onLand(p);
+		if(getOwner() == p && checkForMonopoly()) {
+			setOption("build");
+			msg += "\n Vil du bygge? (Y/N):";
+		}
+		return msg;
 	}
 }

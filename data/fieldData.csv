@@ -35,7 +35,7 @@ Id, FieldType, Label, Cost, Income, Series ID
 34, Chance, PrøvLykken, 0, 0, 0
 35, Plot, Nygade, 6400, 600, 4
 36, Plot, Scandlines, 4000, 500, 2
-37, Chance, Prøv Lykken, 0, 0, 0
+37, Chance, PrøvLykken, 0, 0, 0
 38, Plot, Frederiksberg gade, 7000, 700, 10
 39, Tax, Ekstra Skat,2000, 0, 0
 40, Plot, Rådhuspladsen, 8000, 1000, 10
