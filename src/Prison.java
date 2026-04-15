@@ -8,7 +8,6 @@ public class Prison extends Field implements IOption{
     public String onAccept(Player p) {
         p.setWildcard(false);
         return "\n du har kontakter hos politiet og løslades";
-
     }
 
     @Override
@@ -23,7 +22,7 @@ public class Prison extends Field implements IOption{
     @Override
     public String onLand(Player p){
         String message = super.onLand(p);
-        message += "\n Du er arrresteret, og skal i fængsel";
+        message += "\n Du er arresteret, og skal i fængsel";
 
         if (p.getWildcard()){
             setOption("PrisonWildcard");
