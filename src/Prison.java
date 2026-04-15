@@ -6,14 +6,18 @@ public class Prison extends Field implements IOption{
 
     @Override
     public String onAccept(Player p) {
-        p.setWildCard(false);
+        p.setWildcard(false);
         return "\n du har kontakter hos politiet og løslades";
 
     }
 
     @Override
     public String onReject(Player p) {
-        return "";
+        p.imprison();
+        String message = "\n Du er arresteret, og skal i fængsel";
+        message += "\n Næste gang det bliver din tur, kan du vælge om du vil betale dig ud, eller prøve at slå et dobbeltslag." +
+                "\n Når du har siddet over i tre omgange er du løsladt";
+        return message;
     }
 
     @Override
