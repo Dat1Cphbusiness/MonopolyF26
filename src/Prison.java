@@ -12,6 +12,7 @@ public class Prison extends Field implements IOption {
     }
 
 
+
     @Override
     public String onReject(Player p) {
         p.imprision();
