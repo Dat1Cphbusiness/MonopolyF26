@@ -4,12 +4,14 @@ public class Card {
     int income;
     int cost;
     String event;
+    int newPosition;
 
-    public Card(String message, int income, int cost, String event) {
+    public Card(String message, int income, int cost, String event, int newPosition) {
         this.message = message;
         this.income = income;
         this.cost = cost;
         this.event = event;
+        this.newPosition=newPosition;
     }
 
     @Override
