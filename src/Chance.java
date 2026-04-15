@@ -1,12 +1,14 @@
 public class Chance extends Field{
-private Card card;
+private static CardDeck carddeck;
 
-    public Chance(int ID, String label, Card card){
+    public Chance(int ID, String label){
         super(ID, label, 0, 0);
-        this.card = card;
+
     }
 
     public String onLand(Player p) {
+        Card card = carddeck.getNext();
+
         switch (card.getEvent()) {
             case "pay":
                 Bank.withdraw(cost, p);
