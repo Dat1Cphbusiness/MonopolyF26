@@ -1,4 +1,7 @@
 public class Plot extends Property {
+
+	int buildings;
+
 	public Plot(int ID, String label, int cost, int income, int seriesID) {
 		super(ID, label, cost, income, seriesID);
 	}
@@ -14,6 +17,7 @@ public class Plot extends Property {
 		if owner == current player and isMonopolized
 		then give option to build
 		 */
+
 		String msg = super.onLand(p);
 		if(getOwner() == p && checkForMonopoly()) {
 			setOption("build");
@@ -21,4 +25,17 @@ public class Plot extends Property {
 		}
 		return msg;
 	}
+
+	public String onAccept(Player p) {
+		String msg = super.onAccept(p);
+		if (getOption().equals("build")) {
+			buildings++;
+			Bank.withdraw(500, p);
+			msg += " har købt hus";
+		}
+
+		return msg;
+	}
+
+
 }
