@@ -8,11 +8,6 @@ public class Player {
     private ArrayList<Card> chanceCard;
     private boolean hasWildcard = false;
     private boolean inPrison;
-
-    public int getDiceRoll() {
-        return diceRoll;
-    }
-
     private int diceRoll;
 
 
@@ -20,6 +15,10 @@ public class Player {
         this.name = name;
         this.balance= balance;
         deeds=new ArrayList<>();
+    }
+
+    public int getDiceRoll() {
+        return diceRoll;
     }
 
     public boolean getHasWildcard() {
@@ -88,9 +87,5 @@ public class Player {
     public void moveToPosition(int value){
         position = value;
     }
-
-
-
-
 }
 
