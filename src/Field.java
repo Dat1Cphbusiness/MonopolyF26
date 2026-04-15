@@ -36,6 +36,7 @@ public class Field {
 	public int getIncome(){
 		return income;
 	}
+
 	public String onAccept(Player p){
 		return "";
 	}

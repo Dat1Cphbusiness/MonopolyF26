@@ -113,8 +113,6 @@ public class Game {
         //opdateren spillerens position
         int newPosition = currentPlayer.updatePosition(result);
 
-        //
-
         //find det felt han er landet på
         Field f = board.getField(newPosition);
         landAndAct(f);

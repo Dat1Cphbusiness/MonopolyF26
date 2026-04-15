@@ -24,6 +24,7 @@ public class Dice {
 
 
         return diceRoll[1] + diceRoll[0];
+
     }
 
     public void resetDoubleDiceCounter(){
